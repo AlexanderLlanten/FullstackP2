@@ -1,0 +1,25 @@
+server:
+  port: 8084     # puedes cambiarlo según tu plan
+
+spring:
+  application:
+    name: ms-purchase
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/erp_purchase?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
