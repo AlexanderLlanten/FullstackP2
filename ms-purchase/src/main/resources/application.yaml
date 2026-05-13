@@ -1,0 +1,28 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: ms-purchase
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/compras_db
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+      register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
